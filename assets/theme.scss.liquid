@@ -685,7 +685,7 @@ h6 {
 
 
 /*================ Module-specific styles ================*/
-.header-bar {
+.page-header {
 	@include clearfix();
 	font-family: $accentFontStack;
 	font-size: em(14px);
@@ -723,20 +723,20 @@ h6 {
 }
 
 @include at-query($min, $large) {
-	.header-bar__left {
+	.page-header__left {
 		text-align: left;
 		width: 33.33%;
 	}
 
-	.header-bar__right {
+	.page-header__right {
 		width: 66.66%;
 	}
 }
 
-.header-bar__module {
+.page-header__module {
 	margin-bottom: $gutter/2;
 
-	.header-bar__right &:last-child {
+	.page-header__right &:last-child {
 		margin-bottom: 0;
 	}
 
@@ -748,7 +748,7 @@ h6 {
 	}
 }
 
-.header-bar__module--list {
+.page-header__module--list {
 	list-style: none;
 	margin: 0;
 
@@ -767,7 +767,7 @@ h6 {
 	position: relative;
 }
 
-.header-bar__cart-icon {
+.page-header__cart-icon {
 	font-size: 1.4em;
 	margin-right: 4px;
 }
@@ -776,7 +776,7 @@ h6 {
 	display: none;
 }
 
-.header-bar__sep {
+.page-header__sep {
 	display: none;
 
 	@include at-query($min, $large) {
@@ -787,7 +787,7 @@ h6 {
 	}
 }
 
-.header-bar__search {
+.page-header__search {
 	@include clearfix();
 	position: relative;
 	background-color: #fff;
@@ -818,7 +818,7 @@ h6 {
 	}
 }
 
-.header-bar__search-input[type="search"] {
+.page-header__search-input[type="search"] {
 	display: block;
 	width: 60%;
 	float: right;
@@ -832,7 +832,7 @@ h6 {
 	}
 }
 
-.header-bar__search-submit {
+.page-header__search-submit {
 	position: absolute;
 	display: block;
 	float: left;
@@ -842,35 +842,35 @@ h6 {
 }
 
 .supports-fontface {
-	.header-bar__search-submit {
+	.page-header__search-submit {
 		width: 30px;
 	}
 
-	.header-bar__search-input[type="search"] {
+	.page-header__search-input[type="search"] {
 		width: 120px;
 		padding-left: 30px;
 	}
 
 	@include at-query($max, $medium) {
-		.header-bar__search-form {
+		.page-header__search-form {
 			position: relative;
 		}
 
-		.header-bar__search-submit {
+		.page-header__search-submit {
 			width: 35px;
 			position: absolute;
 			top: 0;
 			left: 0;
 		}
 
-		.header-bar__search-input[type="search"] {
+		.page-header__search-input[type="search"] {
 			width: 100%;
 			padding-left: 35px;
 		}
 	}
 }
 
-.header-bar__search {
+.page-header__search {
 	.btn,
 	.btn:hover,
 	.btn:focus {
@@ -879,7 +879,7 @@ h6 {
 	}
 }
 
-.header-bar__left .header-bar__search-input {
+.page-header__left .page-header__search-input {
 	transition: all 0.3s ease-in-out;
 
 	&:focus {
@@ -888,7 +888,7 @@ h6 {
 	}
 }
 
-.no-js .header-bar__search-submit .fallback-text {
+.no-js .page-header__search-submit .fallback-text {
 	@include visuallyHidden;
 }
 
@@ -1078,7 +1078,7 @@ $badgeSize: 60px;
 	display: block;
 	float: right;
 
-	.header-bar__cart-icon {
+	.page-header__cart-icon {
 		font-size: 1.4em;
 	}
 

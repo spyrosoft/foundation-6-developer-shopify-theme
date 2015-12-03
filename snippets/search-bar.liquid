@@ -15,13 +15,13 @@
 {% endcomment %}
 
 {% if search-bar == 'header' %}
-	<form action="/search" method="get" class="header-bar__search-form clearfix" role="search">
+	<form action="/search" method="get" class="page-header__search-form clearfix" role="search">
 		{% comment %}<input type="hidden" name="type" value="product">{% endcomment %}
-		<button type="submit" class="btn icon-fallback-text header-bar__search-submit">
+		<button type="submit" class="btn icon-fallback-text page-header__search-submit">
 			<span class="icon icon-search" aria-hidden="true"></span>
 			<span class="fallback-text">{{ 'general.search.submit' | t }}</span>
 		</button>
-		<input type="search" name="q" value="{{ search.terms | escape }}" aria-label="{{ 'general.search.placeholder' | t }}" class="header-bar__search-input" placeholder="{{ 'general.search.placeholder' | t }}">
+		<input type="search" name="q" value="{{ search.terms | escape }}" aria-label="{{ 'general.search.placeholder' | t }}" class="page-header__search-input" placeholder="{{ 'general.search.placeholder' | t }}">
 	</form>
 {% else %}
 	<form action="/search" method="get" class="input-group search-bar" role="search">
