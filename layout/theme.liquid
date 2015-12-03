@@ -20,14 +20,12 @@
 	
   <link rel="canonical" href="{{ canonical_url }}">
 	
-  <!-- CSS ================================================== -->
-  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
-  {% include 'google-fonts' %}
-
-  <!-- Header hook for plugins ================================================== -->
+	{{ 'foundation.min.css' | asset_url | stylesheet_tag }}
+  {{ 'app.scss.css' | asset_url | stylesheet_tag }}
+	
+  <!-- Head hook for plugins -->
   {{ content_for_header }}
+  <!-- /Head hook for plugins -->
 
   {% include 'oldIE-js' %}
 
