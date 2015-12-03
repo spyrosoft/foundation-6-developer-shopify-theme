@@ -1,3 +1,4 @@
+<!-- templates/blog-sidebar.liquid -->
 <h4>{{ 'blogs.sidebar.recent_articles' | t }}</h4>
 {% for article in blogs[blog.handle].articles limit:6 %}
   <p>
