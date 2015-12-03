@@ -30,12 +30,6 @@
       },
       {
         "type": "color",
-        "id": "color_primary",
-        "label": "Primary buttons and links",
-        "default": "#204a80"
-      },
-      {
-        "type": "color",
         "id": "color_button_primary_text",
         "label": "Primary button text",
         "default": "#ffffff"
