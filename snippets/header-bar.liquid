@@ -1,0 +1,97 @@
+<div class="header-bar">
+  <div class="wrapper medium-down--hide">
+    <div class="large--display-table">
+
+      <div class="header-bar__left large--display-table-cell">
+
+        {% comment %}
+          Add social links to header
+        {% endcomment %}
+
+        {% comment %}
+        <div class="header-bar__module header-bar__module--list">
+          {% include 'social-links' %}
+        </div>
+        {% endcomment %}
+
+        {% if settings.header_message == blank %}
+          {% if cart.announcements.size > 0 %}
+            <div class="header-bar__module header-bar__message">
+              {{ cart.announcements.first }}
+            </div>
+          {% elsif settings.header_search_enable %}
+            <div class="header-bar__module header-bar__search">
+              {% include 'search-bar' with 'header' %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="header-bar__module header-bar__message">
+            {{ settings.header_message }}
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="header-bar__right large--display-table-cell">
+
+        {% if shop.customer_accounts_enabled %}
+          <ul class="header-bar__module header-bar__module--list">
+            {% if customer %}
+              <li>
+                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+              </li>
+              <li>
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li>
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              <li>
+                {{ 'layout.customer.or' | t }}
+              </li>
+              <li>
+                {{ 'layout.customer.create_account' | t | customer_register_link }}
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
+
+        <div class="header-bar__module">
+          <span class="header-bar__sep" aria-hidden="true"></span>
+          <a href="/cart" class="cart-page-link">
+            <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="header-bar__module">
+          <a href="/cart" class="cart-page-link">
+            {{ 'layout.cart.title' | t }}<span {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>:</span>
+            <span class="cart-count header-bar__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+          </a>
+        </div>
+
+        {% if settings.header_search_enable %}
+          {% unless settings.header_message == blank and cart.announcements.size == 0 %}
+            <div class="header-bar__module header-bar__search">
+              {% include 'search-bar' with 'header' %}
+            </div>
+          {% endunless %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  <div class="wrapper large--hide">
+    <button type="button" class="mobile-nav-trigger" id="MobileNavTrigger">
+      <span class="icon icon-hamburger" aria-hidden="true"></span>
+      {{ 'layout.navigation.menu' | t }}
+    </button>
+    <a href="/cart" class="cart-page-link mobile-cart-page-link">
+      <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+      {{ 'layout.cart.title' | t }}
+      <span class="cart-count {% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+    </a>
+  </div>
+  {% include 'mobile-nav' %}
+</div>
