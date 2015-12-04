@@ -1009,18 +1009,13 @@
 		"settings": [
 			{
 				"type": "checkbox",
-				"id": "footer_blog_enable",
-				"label": "Show latest blog post"
-			},
-			{
-				"type": "blog",
-				"id": "footer_blog",
-				"label": "Blog"
+				"id": "footer_quicklinks_enable",
+				"label": "Show footer menu"
 			},
 			{
 				"type": "checkbox",
-				"id": "footer_quicklinks_enable",
-				"label": "Show footer menu"
+				"id": "footer_quicklinks_title_enable",
+				"label": "Show footer menu title"
 			},
 			{
 				"type": "link_list",
