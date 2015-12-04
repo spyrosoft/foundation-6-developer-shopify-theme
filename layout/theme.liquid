@@ -39,77 +39,35 @@
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
 	{% include 'page-header' %}
-	
-	<header class="site-header" role="banner">
-		<div class="wrapper">
 
-			{% if settings.nav_below_logo %}
+	<header class="site-header row" role="banner">
+		<div class="columns">
 
-			<div class="grid--full">
-				<div class="grid__item">
-					{% if template == 'index' %}
-						<h1 class="site-header__logo{% if settings.left_aligned_logo %} large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
-					{% else %}
-						<div class="h1 site-header__logo{% if settings.left_aligned_logo %} large--left{% endif %}" itemscope itemtype="http://schema.org/Organization">
-					{% endif %}
-						{% if settings.logo_use_image %}
-							<a href="/" class="logo-wrapper" itemprop="url">
-								<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-							</a>
-						{% else %}
-							<a href="/" itemprop="url">{{ shop.name }}</a>
-						{% endif %}
-					{% if template == 'index' %}
-						</h1>
-					{% else %}
-						</div>
-					{% endif %}
-					{% if settings.header_message != blank %}
-						<p class="header-message large--hide">
-							<small>{{ settings.header_message }}</small>
-						</p>
-					{% endif %}
-				</div>
-			</div>
-			<div class="grid--full medium-down--hide">
-				<div class="grid__item">
-					{% include 'site-nav' %}
-				</div>
-			</div>
-
+			{% if template == 'index' %}
+				<h1 itemscope itemtype="http://schema.org/Organization">
 			{% else %}
-
-			<div class="grid--full large--display-table">
-				<div class="grid__item large--one-third large--display-table-cell">
-					{% if template == 'index' %}
-						<h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
-					{% else %}
-						<div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
-					{% endif %}
-						{% if settings.logo_use_image %}
-							<a href="/" class="logo-wrapper" itemprop="url">
-								<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-							</a>
-						{% else %}
-							<a href="/" itemprop="url">{{ shop.name }}</a>
-						{% endif %}
-					{% if template == 'index' %}
-						</h1>
-					{% else %}
-						</div>
-					{% endif %}
-					{% if settings.header_message != blank %}
-						<p class="header-message large--hide">
-							<small>{{ settings.header_message }}</small>
-						</p>
-					{% endif %}
-				</div>
-				<div class="grid__item large--two-thirds large--display-table-cell medium-down--hide">
-					{% include 'site-nav' %}
-				</div>
-			</div>
-
+				<div class="h1" itemscope itemtype="http://schema.org/Organization">
 			{% endif %}
+				{% if settings.logo_use_image %}
+					<a href="/" class="logo" itemprop="url">
+						<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+					</a>
+				{% else %}
+					<a href="/" itemprop="url">{{ shop.name }}</a>
+				{% endif %}
+			{% if template == 'index' %}
+				</h1>
+			{% else %}
+				</div>
+			{% endif %}
+			{% if settings.header_message != blank %}
+				<p class="header-message">
+					{{ settings.header_message }}
+				</p>
+			{% endif %}
+		</div>
+
+		{% include 'site-nav' %}
 
 		</div>
 	</header>

@@ -17,7 +17,6 @@
 			"type_accent_size": "16px",
 			"logo_use_image": false,
 			"logo_max_width": "450",
-			"nav_below_logo": true,
 			"left_aligned_logo": false,
 			"show_header_lines": true,
 			"favicon_enable": false,

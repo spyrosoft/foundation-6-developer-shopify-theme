@@ -962,11 +962,6 @@
 			},
 			{
 				"type": "checkbox",
-				"id": "nav_below_logo",
-				"label": "Main Menu below logo"
-			},
-			{
-				"type": "checkbox",
 				"id": "left_aligned_logo",
 				"label": "Left-align logo"
 			},
