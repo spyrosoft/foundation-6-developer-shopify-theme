@@ -1024,16 +1024,6 @@
 			},
 			{
 				"type": "checkbox",
-				"id": "footer_second_menu_enable",
-				"label": "Show additional footer menu"
-			},
-			{
-				"type": "link_list",
-				"id": "footer_second_menu",
-				"label": "Additional footer menu"
-			},
-			{
-				"type": "checkbox",
 				"id": "footer_social_enable",
 				"label": "Show social media icons",
 				"info": "Add accounts in Social media section"

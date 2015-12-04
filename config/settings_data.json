@@ -26,8 +26,6 @@
 			"footer_quicklinks_enable": true,
 			"footer_quicklinks_title_enable": true,
 			"footer_quicklinks_linklist": "footer",
-			"footer_second_menu_enable": false,
-			"footer_second_menu": "",
 			"footer_social_enable": true,
 			"footer_contact_enable": false,
 			"footer_contact_text": "",
