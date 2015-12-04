@@ -148,19 +148,16 @@
 	{% endfor %}
 
 	{% if slider_home_enable %}
-		{{ 'jquery.flexslider.min.js' | asset_url | script_tag }}
-		{{ 'slider.js' | asset_url | script_tag }}
+		{{ 'slick.min.js' | asset_url | script_tag }}
 	{% endif %}
 
 	{{ 'fastclick.min.js' | asset_url | script_tag }}
-	{{ 'timber.js' | asset_url | script_tag }}
-	{{ 'theme.js' | asset_url | script_tag }}
 
 	{% if template contains 'product' %}
-		{% if settings.product_image_zoom_type == 'lightbox'	%}
-			{{ 'magnific-popup.min.js' | asset_url | script_tag }}
-		{% elsif settings.product_image_zoom_type == 'zoom-in' %}
+		{% if settings.product_image_zoom_type == 'zoom-in' %}
 			{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
+		{% elsif settings.product_image_zoom_type == 'lightbox'	%}
+			{{ 'magnific-popup.min.js' | asset_url | script_tag }}
 		{% endif %}
 	{% endif %}
 

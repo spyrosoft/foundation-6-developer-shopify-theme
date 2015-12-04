@@ -1,5 +1,6 @@
 * Minimally Viable
 ** Merge all store related CSS from timber.scss.liquid and theme.scss.liquid into app.scss.liquid
+** Merge all store related JS from timber.js and theme.js into app.js
 ** i18n
 *** <html lang="????">
 
