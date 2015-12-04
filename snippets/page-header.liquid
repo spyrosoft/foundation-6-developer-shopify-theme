@@ -6,10 +6,6 @@
 			<div class="page-header__left large--display-table-cell">
 
 				{% comment %}
-					Add social links to header
-				{% endcomment %}
-
-				{% comment %}
 				<div class="page-header__module page-header__module--list">
 					{% include 'social-links' %}
 				</div>
@@ -96,3 +92,35 @@
 	</div>
 	{% include 'mobile-nav' %}
 </div>
+
+<header class="site-header" role="banner">
+
+	<div class="columns row">
+
+		{% if template == 'index' %}
+			<h1 itemscope itemtype="http://schema.org/Organization">
+		{% else %}
+			<div class="h1" itemscope itemtype="http://schema.org/Organization">
+		{% endif %}
+			{% if settings.logo_use_image %}
+				<a href="/" class="logo" itemprop="url">
+					<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+				</a>
+			{% else %}
+				<a href="/" itemprop="url">{{ shop.name }}</a>
+			{% endif %}
+		{% if template == 'index' %}
+			</h1>
+		{% else %}
+			</div>
+		{% endif %}
+		{% if settings.header_message != blank %}
+			<p class="header-message">
+				{{ settings.header_message }}
+			</p>
+		{% endif %}
+	</div>
+
+	{% include 'site-nav' %}
+
+</header>

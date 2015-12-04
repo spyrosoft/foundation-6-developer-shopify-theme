@@ -1,0 +1,90 @@
+<footer class="site-footer row text-center" role="contentinfo">
+
+	<hr class="hr--small hr--clear">
+
+	{% if settings.footer_quicklinks_enable %}
+		<div class="columns quicklinks">
+			{% if settings.footer_quicklinks_title_enable %}
+				<h4>{{ 'layout.footer.linklist_title' | t }}</h4>
+			{% endif %}
+			<ul>
+				{% for link in linklists[settings.footer_quicklinks_linklist].links %}
+					<li><a href="{{ link.url }}">{{ link.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+
+	{% if settings.footer_social_enable %}
+		<div class="columns social-links">
+			<h4>{{ 'layout.footer.social_title' | t }}</h4>
+			{% include 'social-links' %}
+		</div>
+	{% endif %}
+
+	{% if settings.footer_contact_enable %}
+		<div class="columns contact">
+			<h4>{{ 'layout.footer.contact_title' | t }}</h4>
+			<div class="rte">{{ settings.footer_contact_text }}</div>
+		</div>
+	{% endif %}
+
+	{% if settings.footer_newsletter_enable %}
+		<div class="columns newsletter">
+			<h4>{{ 'layout.footer.newsletter_title' | t }}</h4>
+			<p>{{ 'layout.footer.newsletter_caption' | t }}</p>
+			{% include 'newsletter-form' %}
+		</div>
+	{% endif %}
+
+	{% if settings.footer_show_methods_of_payment %}
+		{% unless shop.enabled_payment_types == empty %}
+		<div class="columns">
+			<ul class="inline-list payment-icons">
+				{% for type in shop.enabled_payment_types %}
+					<li>
+						<img src="{{ type | payment_type_img_url }}">
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endunless %}
+	{% endif %}
+
+	<div class="columns">
+		{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}
+	</div>
+
+</footer>
+
+{{ 'jquery.min.js' | asset_url | script_tag }}
+{{ 'what-input.min.js' | asset_url | script_tag }}
+{{ 'foundation.min.js' | asset_url | script_tag }}
+{{ 'app.js' | asset_url | script_tag }}
+
+{% for i in (1..4) %}
+	{% capture home_section %}home_section_{{ i }}{% endcapture %}
+	{% if settings[home_section] == 'slider' %}
+		{% assign slider_home_enable = true %}
+	{% endif %}
+{% endfor %}
+
+{% if slider_home_enable %}
+	{{ 'slick.min.js' | asset_url | script_tag }}
+{% endif %}
+
+{{ 'fastclick.min.js' | asset_url | script_tag }}
+
+{% if template contains 'product' %}
+	{% if settings.product_image_zoom_type == 'zoom-in' %}
+		{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
+	{% elsif settings.product_image_zoom_type == 'lightbox'	%}
+		{{ 'magnific-popup.min.js' | asset_url | script_tag }}
+	{% endif %}
+{% endif %}
+
+{% if template contains 'article' or template contains 'product' %}
+	{% if settings.social_sharing_blog or settings.social_sharing_products %}
+		{{ 'social-buttons.js' | asset_url | script_tag }}
+	{% endif %}
+{% endif %}
