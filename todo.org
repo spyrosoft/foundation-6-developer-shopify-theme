@@ -3,6 +3,8 @@
 ** Merge all store related JS from timber.js and theme.js into app.js
 ** i18n
 *** <html lang="????">
+** What is shopify_common.js used for?
+** Check the body classes for templates with template names (handles?) with .'s in them
 
 * Feature Requests
 
