@@ -1,24 +1,40 @@
 <!doctype html>
 <html class="no-js" lang="en-US">
 <head>
-
+	
 	{% include 'html-head' %}
-
+	
 	<!-- Head hook for plugins -->
 	{{ content_for_header }}
 	<!-- /Head hook for plugins -->
-
+	
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
-
-	{% include 'page-header' %}
-
-	<main class="page-main" role="main">
-		{{ content_for_layout }}
-	</main>
-
-	{% include 'page-footer' %}
-
+	
+	<div class="off-canvas-wrapper">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			
+			<div class="off-canvas position-left" data-off-canvas>
+				
+				
+				
+			</div>
+			
+			<div class="off-canvas-content" data-off-canvas-content>
+				
+				{% include 'page-header' %}
+				
+				<main class="page-main" role="main">
+					{{ content_for_layout }}
+				</main>
+				
+				{% include 'page-footer' %}
+				
+			</div>
+			
+		</div>
+	</div>
+	
 </body>
 </html>
