@@ -1,0 +1,12 @@
+---
+:api_key: abcdefghijklmnopqrstuvwxyz012345
+:password: abcdefghijklmnopqrstuvwxyz012345
+:store: example.myshopify.com
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/
+:theme_id: 11111111
