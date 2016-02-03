@@ -1,22 +1,19 @@
 <!-- snippets/page-header.liquid -->
 <header class="page-header" role="banner">
-	<div class="row columns">
-		<div class="text-right">
-			{% if cart.item_count > 0 %}
-			<a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-        <span class="icon icon-cart" aria-hidden="true"></span>
-        {{ 'layout.cart.title' | t }}
-        (<span id="CartCount">{{ cart.item_count }}</span>
-        items
-        <span id="CartCost">{{ cart.total_price | money }}</span>)
-      </a>
-			{% endif %}
-			<button type="button" class="menu-icon" data-toggle="left-nav"></button>
-		</div>
-
+	<div class="text-right">
+		{% if cart.item_count > 0 %}
+		<a href="/cart" aria-controls="CartDrawer" aria-expanded="false">
+      <span class="icon icon-cart" aria-hidden="true"></span>
+      {{ 'layout.cart.title' | t }}
+      (<span id="CartCount">{{ cart.item_count }}</span>
+      items
+      <span id="CartCost">{{ cart.total_price | money }}</span>)
+    </a>
+		{% endif %}
+		<button type="button" class="menu-icon" data-toggle="left-nav"></button>
 	</div>
 	
-	<div class="columns row">
+	<div>
 
 		{% if template == 'index' %}
 			<h1 itemscope itemtype="http://schema.org/Organization">
