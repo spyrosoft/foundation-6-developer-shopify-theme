@@ -1,14 +1,14 @@
 <!-- snippets/page-footer.liquid -->
-<footer class="site-footer row text-center" role="contentinfo">
-
-	<hr class="hr--small hr--clear">
-
+<footer class="site-footer row" role="contentinfo">
+	
+	<hr>
+	
 	{% if settings.footer_quicklinks_enable %}
 		<div class="columns quicklinks">
 			{% if settings.footer_quicklinks_title_enable %}
 				<h4>{{ 'layout.footer.linklist_title' | t }}</h4>
 			{% endif %}
-			<ul>
+			<ul class="menu">
 				{% for link in linklists[settings.footer_quicklinks_linklist].links %}
 					<li><a href="{{ link.url }}">{{ link.title }}</a></li>
 				{% endfor %}
@@ -41,7 +41,7 @@
 	{% if settings.footer_show_methods_of_payment %}
 		{% unless shop.enabled_payment_types == empty %}
 		<div class="columns">
-			<ul class="inline-list payment-icons">
+			<ul class="menu payment-icons">
 				{% for type in shop.enabled_payment_types %}
 					<li>
 						<img src="{{ type | payment_type_img_url }}">
@@ -52,8 +52,8 @@
 		{% endunless %}
 	{% endif %}
 
-	<div class="columns">
-		{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}
+	<div class="columns standard-margin text-center">
+		{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
 	</div>
 
 </footer>

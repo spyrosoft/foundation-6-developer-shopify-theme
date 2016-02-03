@@ -1,4 +1,5 @@
 * Minimally Viable
+** Systematically test each of the theme settings
 ** Merge all store related CSS from timber.scss.liquid and theme.scss.liquid into app.scss.liquid
 ** Merge all store related JS from timber.js and theme.js into app.js
 ** i18n
@@ -9,6 +10,8 @@
 ** Diff the new snippets/social-meta-tags.liquid with the existing one
 ** Include a cart icon next to the cart data in the header
 ** Test all customer functionality (find-grep "*.liquid" customer)
+** Activate snippets/social-links.liquid icons
+** Add a minimal contact form to the footer in addition to a contact page
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

@@ -9,19 +9,18 @@
 	 - http://docs.shopify.com/support/configuration/store-customization/where-do-i-get-my-mailchimp-form-action
 
 {% endcomment %}
+
 {% if settings.newsletter_form_action != blank %}
 	{% assign form_action = settings.newsletter_form_action %}
 {% else %}
 	{% assign form_action = '#' %}
 {% endif %}
-<form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="small--hide">
-	<input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-	<input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-</form>
-<form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="large--hide medium--hide input-group">
-	<input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-	<span class="input-group-btn">
-		<input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-	</span>
+<form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="row">
+	<div class="columns large-8 medium-8">
+		<input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+	</div>
+	<div class="columns large-4 medium-4">
+		<input type="submit" class="button expanded" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+	</div>
 </form>
 <!-- end snippets/newsletter-form.liquid -->
