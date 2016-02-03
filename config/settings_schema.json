@@ -999,7 +999,7 @@
 			},
 			{
 				"type": "checkbox",
-				"id": "header_search_enable",
+				"id": "navigation_search_enable",
 				"label": "Show search bar"
 			}
 		]

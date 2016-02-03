@@ -21,7 +21,7 @@
 			"show_header_lines": true,
 			"favicon_enable": false,
 			"header_message": "",
-			"header_search_enable": true,
+			"navigation_search_enable": true,
 			"footer_blog": "news",
 			"footer_quicklinks_enable": true,
 			"footer_quicklinks_title_enable": true,
