@@ -1,10 +1,10 @@
 <!-- snippets/page-footer.liquid -->
-<footer class="site-footer row" role="contentinfo">
+<footer class="site-footer" role="contentinfo">
 	
 	<hr>
 	
 	{% if settings.footer_quicklinks_enable %}
-		<div class="columns quicklinks">
+		<div class="quicklinks">
 			{% if settings.footer_quicklinks_title_enable %}
 				<h4>{{ 'layout.footer.linklist_title' | t }}</h4>
 			{% endif %}
@@ -17,21 +17,21 @@
 	{% endif %}
 
 	{% if settings.footer_social_enable %}
-		<div class="columns social-links">
+		<div class="social-links">
 			<h4>{{ 'layout.footer.social_title' | t }}</h4>
 			{% include 'social-links' %}
 		</div>
 	{% endif %}
 
 	{% if settings.footer_contact_enable %}
-		<div class="columns contact">
+		<div class="contact">
 			<h4>{{ 'layout.footer.contact_title' | t }}</h4>
 			<div class="rte">{{ settings.footer_contact_text }}</div>
 		</div>
 	{% endif %}
 
 	{% if settings.footer_newsletter_enable %}
-		<div class="columns newsletter">
+		<div class="newsletter">
 			<h4>{{ 'layout.footer.newsletter_title' | t }}</h4>
 			<p>{{ 'layout.footer.newsletter_caption' | t }}</p>
 			{% include 'newsletter-form' %}
@@ -52,7 +52,7 @@
 		{% endunless %}
 	{% endif %}
 
-	<div class="columns standard-margin text-center">
+	<div class="medium-margin text-center">
 		{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}
 	</div>
 
