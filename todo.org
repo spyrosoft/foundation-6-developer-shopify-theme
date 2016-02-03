@@ -5,6 +5,8 @@
 *** <html lang="????">
 ** What is shopify_common.js used for?
 ** Check the body classes for templates with template names (handles?) with .'s in them
+** In the navigation, display the search bar on mouseover
+** Diff the new snippets/social-meta-tags.liquid with the existing one
 
 * Feature Requests
 

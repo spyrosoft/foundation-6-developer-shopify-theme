@@ -6,3 +6,23 @@ $medium-spacing: 2rem;
 $large-spacing: 4rem;
 $huge-spacing: 10rem;
 
+.menu-icon {
+	margin: $small-spacing;
+	margin-right: 0;
+}
+
+
+/* Colors */
+
+$fg-color-primary: #2199e8;
+$fg-color-secondary: #1585cf;
+
+.menu-icon:after {
+	background-color: $fg-color-primary;
+	box-shadow: 0 7px 0 $fg-color-primary, 0 14px 0 $fg-color-primary;
+}
+
+.menu-icon:hover::after {
+	background-color: $fg-color-secondary;
+	box-shadow: 0 7px 0 $fg-color-secondary, 0 14px 0 $fg-color-secondary;
+}
