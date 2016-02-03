@@ -2,6 +2,15 @@
 <header class="page-header" role="banner">
 	<div class="row columns">
 		<div class="text-right">
+			{% if cart.item_count > 0 %}
+			<a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+        <span class="icon icon-cart" aria-hidden="true"></span>
+        {{ 'layout.cart.title' | t }}
+        (<span id="CartCount">{{ cart.item_count }}</span>
+        items
+        <span id="CartCost">{{ cart.total_price | money }}</span>)
+      </a>
+			{% endif %}
 			<button type="button" class="menu-icon" data-toggle="left-nav"></button>
 		</div>
 		
@@ -42,27 +51,6 @@
 		</ul>
 		{% endif %}
 
-		<div class="page-header__module">
-			<span class="page-header__sep" aria-hidden="true"></span>
-			<a href="/cart" class="cart-page-link">
-				<span class="icon icon-cart page-header__cart-icon" aria-hidden="true"></span>
-			</a>
-		</div>
-
-		<div class="page-header__module">
-			<a href="/cart" class="cart-page-link">
-				{{ 'layout.cart.title' | t }}<span {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>:</span>
-				<span class="cart-count page-header__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
-			</a>
-		</div>
-
-	</div>
-	<div class="wrapper large--hide">
-		<a href="/cart" class="cart-page-link mobile-cart-page-link">
-			<span class="icon icon-cart page-header__cart-icon" aria-hidden="true"></span>
-			{{ 'layout.cart.title' | t }}
-			<span class="cart-count {% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
-		</a>
 	</div>
 
 	<div class="columns row">
