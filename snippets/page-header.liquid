@@ -1,126 +1,95 @@
 <!-- snippets/page-header.liquid -->
 <header class="page-header" role="banner">
-
-	<div class="page-header">
-		<div class="wrapper medium-down--hide">
-			<div class="large--display-table">
-
-				<div class="page-header__left large--display-table-cell">
-
-					{% comment %}
-					<div class="page-header__module page-header__module--list">
-						{% include 'social-links' %}
-					</div>
-					{% endcomment %}
-
-					{% if settings.header_message == blank %}
-						{% if cart.announcements.size > 0 %}
-							<div class="page-header__module page-header__message">
-								{{ cart.announcements.first }}
-							</div>
-						{% elsif settings.header_search_enable %}
-							<div class="page-header__module page-header__search">
-								{% include 'search-bar' with 'header' %}
-							</div>
-						{% endif %}
-					{% else %}
-						<div class="page-header__module page-header__message">
-							{{ settings.header_message }}
-						</div>
-					{% endif %}
-
-				</div>
-
-				<div class="page-header__right large--display-table-cell">
-
-					{% if shop.customer_accounts_enabled %}
-						<ul class="page-header__module page-header__module--list">
-							{% if customer %}
-								<li>
-									<a href="/account">{{ 'layout.customer.account' | t }}</a>
-								</li>
-								<li>
-									{{ 'layout.customer.log_out' | t | customer_logout_link }}
-								</li>
-							{% else %}
-								<li>
-									{{ 'layout.customer.log_in' | t | customer_login_link }}
-								</li>
-								<li>
-									{{ 'layout.customer.or' | t }}
-								</li>
-								<li>
-									{{ 'layout.customer.create_account' | t | customer_register_link }}
-								</li>
-							{% endif %}
-						</ul>
-					{% endif %}
-
-					<div class="page-header__module">
-						<span class="page-header__sep" aria-hidden="true"></span>
-						<a href="/cart" class="cart-page-link">
-							<span class="icon icon-cart page-header__cart-icon" aria-hidden="true"></span>
-						</a>
-					</div>
-
-					<div class="page-header__module">
-						<a href="/cart" class="cart-page-link">
-							{{ 'layout.cart.title' | t }}<span {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>:</span>
-							<span class="cart-count page-header__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
-						</a>
-					</div>
-
-					{% if settings.header_search_enable %}
-						{% unless settings.header_message == blank and cart.announcements.size == 0 %}
-							<div class="page-header__module page-header__search">
-								{% include 'search-bar' with 'header' %}
-							</div>
-						{% endunless %}
-					{% endif %}
-
-				</div>
-			</div>
+	<div class="row columns">
+		<div class="text-right">
+			<button type="button" class="menu-icon" data-toggle="left-nav"></button>
 		</div>
-		<div class="wrapper large--hide">
-			<button type="button" class="mobile-nav-trigger" id="MobileNavTrigger">
-				<span class="icon icon-hamburger" aria-hidden="true"></span>
-				{{ 'layout.navigation.menu' | t }}
-			</button>
-			<a href="/cart" class="cart-page-link mobile-cart-page-link">
+		
+		{% if cart.announcements.size > 0 %}
+		<div class="page-header__module page-header__message">
+			{{ cart.announcements.first }}
+		</div>
+		{% else %}
+		<div class="page-header__module page-header__message">
+			{{ settings.header_message }}
+		</div>
+		{% endif %}
+
+	</div>
+
+	<div class="page-header__right large--display-table-cell">
+
+		{% if shop.customer_accounts_enabled %}
+		<ul class="page-header__module page-header__module--list">
+			{% if customer %}
+			<li>
+				<a href="/account">{{ 'layout.customer.account' | t }}</a>
+			</li>
+			<li>
+				{{ 'layout.customer.log_out' | t | customer_logout_link }}
+			</li>
+			{% else %}
+			<li>
+				{{ 'layout.customer.log_in' | t | customer_login_link }}
+			</li>
+			<li>
+				{{ 'layout.customer.or' | t }}
+			</li>
+			<li>
+				{{ 'layout.customer.create_account' | t | customer_register_link }}
+			</li>
+			{% endif %}
+		</ul>
+		{% endif %}
+
+		<div class="page-header__module">
+			<span class="page-header__sep" aria-hidden="true"></span>
+			<a href="/cart" class="cart-page-link">
 				<span class="icon icon-cart page-header__cart-icon" aria-hidden="true"></span>
-				{{ 'layout.cart.title' | t }}
-				<span class="cart-count {% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
 			</a>
 		</div>
-		{% include 'mobile-nav' %}
+
+		<div class="page-header__module">
+			<a href="/cart" class="cart-page-link">
+				{{ 'layout.cart.title' | t }}<span {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>:</span>
+				<span class="cart-count page-header__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+			</a>
+		</div>
+
+	</div>
+	<div class="wrapper large--hide">
+		<a href="/cart" class="cart-page-link mobile-cart-page-link">
+			<span class="icon icon-cart page-header__cart-icon" aria-hidden="true"></span>
+			{{ 'layout.cart.title' | t }}
+			<span class="cart-count {% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
+		</a>
 	</div>
 
 	<div class="columns row">
 
 		{% if template == 'index' %}
-			<h1 itemscope itemtype="http://schema.org/Organization">
-		{% else %}
+		<h1 itemscope itemtype="http://schema.org/Organization">
+			{% else %}
 			<div class="h1" itemscope itemtype="http://schema.org/Organization">
-		{% endif %}
-			{% if settings.logo_use_image %}
+				{% endif %}
+				{% if settings.logo_use_image %}
 				<a href="/" class="logo" itemprop="url">
 					<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
 				</a>
-			{% else %}
+				{% else %}
 				<a href="/" itemprop="url">{{ shop.name }}</a>
-			{% endif %}
-		{% if template == 'index' %}
-			</h1>
+				{% endif %}
+				{% if template == 'index' %}
+		</h1>
 		{% else %}
-			</div>
+		</div>
 		{% endif %}
 		{% if settings.header_message != blank %}
-			<p class="header-message">
-				{{ settings.header_message }}
-			</p>
+		<p class="header-message">
+			{{ settings.header_message }}
+		</p>
 		{% endif %}
 	</div>
 
-	{% include 'site-nav' %}
-
 </header>
+<!-- end snippets/page-header.liquid -->

@@ -1,3 +1,4 @@
+<!-- snippets/page-footer.liquid -->
 <footer class="site-footer row text-center" role="contentinfo">
 
 	<hr class="hr--small hr--clear">
@@ -56,35 +57,4 @@
 	</div>
 
 </footer>
-
-{{ 'jquery.min.js' | asset_url | script_tag }}
-{{ 'what-input.min.js' | asset_url | script_tag }}
-{{ 'foundation.min.js' | asset_url | script_tag }}
-{{ 'app.js' | asset_url | script_tag }}
-
-{% for i in (1..4) %}
-	{% capture home_section %}home_section_{{ i }}{% endcapture %}
-	{% if settings[home_section] == 'slider' %}
-		{% assign slider_home_enable = true %}
-	{% endif %}
-{% endfor %}
-
-{% if slider_home_enable %}
-	{{ 'slick.min.js' | asset_url | script_tag }}
-{% endif %}
-
-{{ 'fastclick.min.js' | asset_url | script_tag }}
-
-{% if template contains 'product' %}
-	{% if settings.product_image_zoom_type == 'zoom-in' %}
-		{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
-	{% elsif settings.product_image_zoom_type == 'lightbox'	%}
-		{{ 'magnific-popup.min.js' | asset_url | script_tag }}
-	{% endif %}
-{% endif %}
-
-{% if template contains 'article' or template contains 'product' %}
-	{% if settings.social_sharing_blog or settings.social_sharing_products %}
-		{{ 'social-buttons.js' | asset_url | script_tag }}
-	{% endif %}
-{% endif %}
+<!-- end snippets/page-footer.liquid -->
