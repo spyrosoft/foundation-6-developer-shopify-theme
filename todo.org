@@ -8,6 +8,7 @@
 ** In the navigation, display the search bar on mouseover
 ** Diff the new snippets/social-meta-tags.liquid with the existing one
 ** Include a cart icon next to the cart data in the header
+** Test all customer functionality (find-grep "*.liquid" customer)
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

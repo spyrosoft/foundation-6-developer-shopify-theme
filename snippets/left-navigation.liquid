@@ -23,29 +23,29 @@
 	
 	{% if shop.customer_accounts_enabled %}
 		{% if customer %}
-			<li class="mobile-nav__link">
+			<li>
 				<a href="/account">{{ 'layout.customer.account' | t }}</a>
 			</li>
-			<li class="mobile-nav__link">
+			<li>
 				{{ 'layout.customer.log_out' | t | customer_logout_link }}
 			</li>
 		{% else %}
-			<li class="mobile-nav__link">
+			<li>
 				{{ 'layout.customer.log_in' | t | customer_login_link }}
 			</li>
 			{% if shop.customer_accounts_optional %}
-				<li class="mobile-nav__link">
+				<li>
 					{{ 'layout.customer.create_account' | t | customer_register_link }}
 				</li>
 			{% endif %}
 		{% endif %}
 	{% endif %}
 	
-	{% if settings.header_search_enable %}
-	<li class="mobile-nav__link">
-		<div class="page-header__module page-header__search">
-				{% include 'search-bar' with 'header' %}
-		</div>
+	{% if settings.navigation_search_enable %}
+	<li>
+		<form action="/search" method="get" class="row columns" role="search">
+			<input type="search" name="q" value="" aria-label="Search" placeholder="Search">
+		</form>
 	</li>
 	{% endif %}
 	

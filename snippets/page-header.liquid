@@ -13,70 +13,42 @@
 			{% endif %}
 			<button type="button" class="menu-icon" data-toggle="left-nav"></button>
 		</div>
-		
-		{% if cart.announcements.size > 0 %}
-		<div class="page-header__module page-header__message">
-			{{ cart.announcements.first }}
-		</div>
-		{% else %}
-		<div class="page-header__module page-header__message">
-			{{ settings.header_message }}
-		</div>
-		{% endif %}
 
 	</div>
-
-	<div class="page-header__right large--display-table-cell">
-
-		{% if shop.customer_accounts_enabled %}
-		<ul class="page-header__module page-header__module--list">
-			{% if customer %}
-			<li>
-				<a href="/account">{{ 'layout.customer.account' | t }}</a>
-			</li>
-			<li>
-				{{ 'layout.customer.log_out' | t | customer_logout_link }}
-			</li>
-			{% else %}
-			<li>
-				{{ 'layout.customer.log_in' | t | customer_login_link }}
-			</li>
-			<li>
-				{{ 'layout.customer.or' | t }}
-			</li>
-			<li>
-				{{ 'layout.customer.create_account' | t | customer_register_link }}
-			</li>
-			{% endif %}
-		</ul>
-		{% endif %}
-
-	</div>
-
+	
 	<div class="columns row">
 
 		{% if template == 'index' %}
-		<h1 itemscope itemtype="http://schema.org/Organization">
-			{% else %}
-			<div class="h1" itemscope itemtype="http://schema.org/Organization">
-				{% endif %}
-				{% if settings.logo_use_image %}
-				<a href="/" class="logo" itemprop="url">
-					<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-				</a>
-				{% else %}
-				<a href="/" itemprop="url">{{ shop.name }}</a>
-				{% endif %}
-				{% if template == 'index' %}
-		</h1>
+			<h1 itemscope itemtype="http://schema.org/Organization">
 		{% else %}
-		</div>
+			<div itemscope itemtype="http://schema.org/Organization">
+				<strong>
+		{% endif %}
+		{% if settings.logo_use_image %}
+					<a href="/" class="logo" itemprop="url">
+						<img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+					</a>
+		{% else %}
+					<a href="/" itemprop="url">{{ shop.name }}</a>
+		{% endif %}
+		{% if template == 'index' %}
+			</h1>
+		{% else %}
+				</strong>
+			</div>
 		{% endif %}
 		{% if settings.header_message != blank %}
-		<p class="header-message">
-			{{ settings.header_message }}
-		</p>
+			<p class="header-message">
+				{{ settings.header_message }}
+			</p>
 		{% endif %}
+		
+		{% if cart.announcements.size > 0 %}
+			<div class="cart-announcements">
+				{{ cart.announcements.first }}
+			</div>
+		{% endif %}
+		
 	</div>
 
 </header>
