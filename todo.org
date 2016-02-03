@@ -12,6 +12,7 @@
 ** Test all customer functionality (find-grep "*.liquid" customer)
 ** Activate snippets/social-links.liquid icons
 ** Add a minimal contact form to the footer in addition to a contact page
+** Systematically review the Engish locale text
 
 * Feature Requests
 ** Systematically add i18n throughout the theme
