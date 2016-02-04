@@ -17,7 +17,7 @@
 	<div class="section-header section-header--medium">
 		<h4 class="section-header__title">{{ 'products.general.related_products_title' | t }}</h4>
 	</div>
-	<div class="grid-uniform grid-link__container">
+	<div class="row product-showcase">
 		{% assign current_product = product %}
 		{% assign current_product_found = false %}
 		{% for product in collection.products limit: number_of_products_to_fetch %}

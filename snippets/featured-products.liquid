@@ -5,15 +5,13 @@
 {% assign total_products = products_per_row | times: rows %}
 
 {% if settings.home_featured_products_show_heading %}
-<div class="section-header section-header--small">
-	<h2 class="section-header__title">
-		{% if featured == 'frontpage' %}
-			{{ 'home_page.sections.frontpage_title' | t }}
-		{% else %}
-			{{ collections[featured].title | escape }}
-		{% endif %}
-	</h2>
-</div>
+<h2 class="section-header">
+	{% if featured == 'frontpage' %}
+		{{ 'home_page.sections.frontpage_title' | t }}
+	{% else %}
+		{{ collections[featured].title | escape }}
+	{% endif %}
+</h2>
 {% endif %}
 
 {% case products_per_row %}
@@ -27,7 +25,7 @@
 		{% assign grid_item_width = 'small--one-half medium--one-half large--one-fifth' %}
 {% endcase %}
 
-<div class="grid-uniform">
+<div class="row product-showcase">
 
 	{% for product in collections[featured].products limit: total_products %}
 		{% include 'product-grid-item' %}
@@ -37,6 +35,7 @@
 			{% assign emptyState = true %}
 		{% endunless %}
 
+	<!-- TODO: This is wrong: -->
 		<div class="grid__item">
 			<div class="helper-section">
 				<div class="helper-note">

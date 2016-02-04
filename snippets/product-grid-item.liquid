@@ -1,8 +1,4 @@
 <!-- snippets/product-grid-item.liquid -->
-{% unless grid_item_width %}
-	{% assign grid_item_width = 'large--one-third medium-down--one-half' %}
-{% endunless %}
-
 {% unless current_collection == blank %}
 	{% assign current_collection = collection %}
 {% endunless %}
@@ -19,8 +15,8 @@
 	{% assign sold_out = false %}
 {% endif %}
 
-<div class="grid__item {{grid_item_width}}{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}">
-	<a href="{{ product.url | within: collection }}" class="grid-link text-center">
+<div class="columns large-3 medium-6 small-12{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}">
+	<a href="{{ product.url | within: collection }}" class="text-center">
 		<span class="grid-link__image grid-link__image--product">
 			{% if on_sale and settings.collections_show_sale_circle %}
 				<span class="badge badge--sale">
