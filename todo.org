@@ -14,6 +14,7 @@
 ** Add a minimal contact form to the footer in addition to a contact page
 ** Systematically review the Engish locale text
 ** Systematically delete all unused files
+** Style the product-showcase on-sale badges
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

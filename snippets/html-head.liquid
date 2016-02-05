@@ -19,6 +19,7 @@
 
 {{ 'foundation.min.css' | asset_url | stylesheet_tag }}
 {{ 'app.scss.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.min.js' | asset_url | script_tag }}
 
 {% comment %}
 	If you store has customer accounts disabled, you can remove shopify_common.js:
