@@ -8,6 +8,10 @@ $huge-spacing: 10rem;
 
 $minimum-product-button-height: 8rem;
 
+.row, hr {
+	max-width: none;
+}
+
 .small-margin {
 	margin: $small-spacing;
 }
@@ -34,23 +38,23 @@ footer>div {
 	margin-left: $small-spacing;
 }
 
-.product-showcase-item .badge {
+.individual-product .badge {
 	margin: $tiny-spacing;
 }
 
-.product-showcase-item .product-title,
-.product-showcase-item .product-vendor,
-.product-showcase-item .product-price {
+.individual-product .product-title,
+.individual-product .product-vendor,
+.individual-product .product-price {
 	line-height: 120%;
 	display: block;
 }
 
-.product-showcase-item .product-vendor,
-.product-showcase-item .product-price {
+.individual-product .product-vendor,
+.individual-product .product-price {
 	margin-top: 0.5rem;
 }
 
-.product-showcase-item button {
+.individual-product button {
 	min-height: $minimum-product-button-height;
 }
 
@@ -78,15 +82,15 @@ $fg-color-secondary: #1585cf;
 	float: left;
 }
 
-.product-showcase-item {
+.individual-product {
 	position: relative;
 }
 
-.product-showcase-item .badge {
+.individual-product .badge {
 	position: absolute;
 }
 
-.product-showcase .product-showcase-item a {
+.product-showcase .individual-product a {
 	text-align: center;
 }
 
@@ -97,6 +101,6 @@ $fg-color-secondary: #1585cf;
 	text-decoration: line-through;
 }
 
-.product-showcase-item label {
+.individual-product label {
 	cursor: pointer;
 }
