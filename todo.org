@@ -14,11 +14,9 @@ snippets/pagination-custom.liquid
 snippets/search-result-grid.liquid
 snippets/tags-article.liquid
 snippets/newsletter-form.liquid
-snippets/page-footer.liquid
 snippets/collection-grid-item.liquid
 snippets/slider.liquid
 snippets/search-result.liquid
-snippets/left-navigation.liquid
 snippets/social-meta-tags.liquid
 snippets/search-bar.liquid
 snippets/collection-tags.liquid
@@ -101,7 +99,7 @@ templates/product.liquid
 *** Use assets/icons.json if possible
 ** Test all customer functionality (find-grep "*.liquid" customer)
 ** Activate snippets/social-links.liquid icons
-** Add a minimal contact form to the footer in addition to a contact page
+** Add a minimal contact page link to the footer in addition to the store contact details from settings
 ** Systematically review the Engish locale text
 ** Systematically delete all unused files
 ** Style the product-showcase on-sale badges
