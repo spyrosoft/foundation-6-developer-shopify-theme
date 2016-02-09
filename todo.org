@@ -97,6 +97,7 @@ locales/pt-BR.json
 ** Systematically review the Engish locale text
 ** Systematically delete all unused files
 ** Style the product-showcase on-sale badges
+** Limit the width of the footer content - at least the newsletter sign up form
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

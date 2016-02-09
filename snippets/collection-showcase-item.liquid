@@ -1,0 +1,19 @@
+<!-- snippets/collection-showcase-item.liquid -->
+
+{% capture collection_title %}{{ collections[featured].title | escape }}{% endcapture %}
+
+<div class="columns small-12 medium-12 large-6 individual-collection">
+	<a href="{{ collections[featured].url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="collection-title">
+		<label>
+			<span class="collection-image">
+				{% if collections[featured].image %}
+					{{ collections[featured].image.src | img_url: 'grande' | img_tag: collection_title }}
+				{% else %}
+					{{ collections[featured].products.first.featured_image | img_url: 'grande' | img_tag: collection_title }}
+				{% endif %}
+			</span>
+			<button class="button expanded">{{ collections[featured].title }}</button>
+		</label>
+	</a>
+</div>
+<!-- end snippets/collection-showcase-item.liquid -->

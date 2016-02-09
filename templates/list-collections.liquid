@@ -3,12 +3,12 @@
 	<h1>{{ 'collections.general.title' | t }}</h1>
 </header>
 
-<div class="collections-showcase">
+<div class="row collections-showcase">
 	{% for collection in collections %}
 		{% unless collection.handle == 'frontpage' %}
 			{% assign collection_item_width = 'medium-down--one-half large--one-third' %}
 			{% assign featured = collection.handle %}
-			{% include 'collection-grid-item' %}
+			{% include 'collection-showcase-item' %}
 		{% endunless %}
 	{% endfor %}
 </div>
