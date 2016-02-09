@@ -6,6 +6,8 @@ $medium-spacing: 2rem;
 $large-spacing: 4rem;
 $huge-spacing: 10rem;
 
+$minimum-product-button-height: 8rem;
+
 .small-margin {
 	margin: $small-spacing;
 }
@@ -32,6 +34,26 @@ footer>div {
 	margin-left: $small-spacing;
 }
 
+.product-showcase-item .badge {
+	margin: $tiny-spacing;
+}
+
+.product-showcase-item .product-title,
+.product-showcase-item .product-vendor,
+.product-showcase-item .product-price {
+	line-height: 120%;
+	display: block;
+}
+
+.product-showcase-item .product-vendor,
+.product-showcase-item .product-price {
+	margin-top: 0.5rem;
+}
+
+.product-showcase-item button {
+	min-height: $minimum-product-button-height;
+}
+
 
 /* Colors */
 
@@ -46,4 +68,35 @@ $fg-color-secondary: #1585cf;
 .menu-icon:hover::after {
 	background-color: $fg-color-secondary;
 	box-shadow: 0 7px 0 $fg-color-secondary, 0 14px 0 $fg-color-secondary;
+}
+
+
+/* Alignment */
+
+/* Overriding Foundation's last child float right styles which cause columns to separate if an odd number of columns exist. This looks very odd in the case of products not lining up next to one another. I'm not sure why they made this implementation decision; I can't think of a case where I would want this. */
+.column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+	float: left;
+}
+
+.product-showcase-item {
+	position: relative;
+}
+
+.product-showcase-item .badge {
+	position: absolute;
+}
+
+.product-showcase .product-showcase-item a {
+	text-align: center;
+}
+
+
+/* Styling */
+
+.product-compare-price {
+	text-decoration: line-through;
+}
+
+.product-showcase-item label {
+	cursor: pointer;
 }
