@@ -29,17 +29,19 @@ snippets/blog-sidebar.liquid
 snippets/svg-definitions.liquid
 snippets/social-links.liquid
 snippets/collection-sorting.liquid
+
 config/settings_schema.json
 config/settings_data.json
+
 locales/en.default.json
 locales/fr.json
 locales/es.json
 locales/de.json
 locales/pt-PT.json
 locales/pt-BR.json
+
 assets/gift-card.scss.liquid
 assets/styles.css.map
-assets/slide_1.jpg
 assets/slick.eot
 assets/theme.scss.liquid
 assets/icons.json
@@ -59,7 +61,6 @@ assets/icons.woff
 assets/icons.ttf
 assets/slider.js.liquid
 assets/timber.scss.liquid
-assets/slide_2.jpg
 assets/slick.svg
 assets/slick.min.js
 assets/app.scss.liquid
@@ -77,6 +78,7 @@ assets/respond.min.js
 assets/foundation.min.css
 assets/social-buttons.js.liquid
 assets/slick-theme.css
+
 templates/blog.liquid
 templates/list-collections.liquid
 templates/cart.liquid
