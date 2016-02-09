@@ -43,7 +43,6 @@ locales/pt-BR.json
 assets/gift-card.scss.liquid
 assets/slick.eot
 assets/icons.json
-assets/modernizr.min.js
 assets/magnific-popup.min.js
 assets/slick.ttf
 assets/app.js
