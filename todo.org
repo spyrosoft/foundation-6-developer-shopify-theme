@@ -1,4 +1,24 @@
 * Files Remaining
+templates/cart.liquid
+templates/blog.liquid
+templates/404.liquid
+templates/collection.liquid
+templates/page.contact.liquid
+templates/page.no-heading.liquid
+templates/article.liquid
+templates/password.liquid
+templates/gift_card.liquid
+templates/page.liquid
+templates/search.liquid
+templates/product.liquid
+templates/customers/order.liquid
+templates/customers/register.liquid
+templates/customers/account.liquid
+templates/customers/reset_password.liquid
+templates/customers/addresses.liquid
+templates/customers/activate_account.liquid
+templates/customers/login.liquid
+
 snippets/respond.liquid
 snippets/site-nav.liquid
 snippets/google-fonts.liquid
@@ -26,16 +46,6 @@ snippets/svg-definitions.liquid
 snippets/social-links.liquid
 snippets/collection-sorting.liquid
 
-config/settings_schema.json
-config/settings_data.json
-
-locales/en.default.json
-locales/fr.json
-locales/es.json
-locales/de.json
-locales/pt-PT.json
-locales/pt-BR.json
-
 assets/gift-card.scss.liquid
 assets/slick.eot
 assets/icons.json
@@ -58,28 +68,15 @@ assets/respond.min.js
 assets/social-buttons.js.liquid
 assets/slick-theme.css
 
-templates/blog.liquid
-templates/list-collections.liquid
-templates/cart.liquid
-templates/404.liquid
-templates/index.liquid
-templates/collection.liquid
-templates/page.contact.liquid
-templates/page.no-heading.liquid
-templates/article.liquid
-templates/customers
-templates/customers/order.liquid
-templates/customers/register.liquid
-templates/customers/account.liquid
-templates/customers/reset_password.liquid
-templates/customers/addresses.liquid
-templates/customers/activate_account.liquid
-templates/customers/login.liquid
-templates/password.liquid
-templates/gift_card.liquid
-templates/page.liquid
-templates/search.liquid
-templates/product.liquid
+config/settings_schema.json
+config/settings_data.json
+
+locales/en.default.json
+locales/fr.json
+locales/es.json
+locales/de.json
+locales/pt-PT.json
+locales/pt-BR.json
 
 * Minimally Viable
 ** Systematically test each of the theme settings
@@ -95,6 +92,7 @@ templates/product.liquid
 *** Use assets/icons.json if possible
 ** Test all customer functionality (find-grep "*.liquid" customer)
 ** Activate snippets/social-links.liquid icons
+** Modify social-buttons.js - possibly namespace only
 ** Add a minimal contact page link to the footer in addition to the store contact details from settings
 ** Systematically review the Engish locale text
 ** Systematically delete all unused files

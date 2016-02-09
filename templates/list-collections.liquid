@@ -1,9 +1,9 @@
 <!-- templates/list-collections.liquid -->
 <header class="section-header">
-	<h1 class="section-header__title">{{ 'collections.general.title' | t }}</h1>
+	<h1>{{ 'collections.general.title' | t }}</h1>
 </header>
 
-<div class="grid-uniform">
+<div class="collections-showcase">
 	{% for collection in collections %}
 		{% unless collection.handle == 'frontpage' %}
 			{% assign collection_item_width = 'medium-down--one-half large--one-third' %}
