@@ -41,14 +41,10 @@ locales/pt-PT.json
 locales/pt-BR.json
 
 assets/gift-card.scss.liquid
-assets/styles.css.map
 assets/slick.eot
-assets/theme.scss.liquid
 assets/icons.json
 assets/jquery.flexslider.min.js
 assets/modernizr.min.js
-assets/what-input.min.js
-assets/styles.css
 assets/ajax-loader.gif
 assets/magnific-popup.min.js
 assets/slick.ttf
@@ -66,16 +62,12 @@ assets/slick.min.js
 assets/app.scss.liquid
 assets/ico-select.svg.liquid
 assets/slick.woff
-assets/jquery.min.js
 assets/respond-proxy.html
 assets/fastclick.min.js
 assets/password-page-background.jpg
 assets/jquery.zoom.min.js
 assets/timber.js.liquid
-assets/favicon.png
-assets/foundation.min.js
 assets/respond.min.js
-assets/foundation.min.css
 assets/social-buttons.js.liquid
 assets/slick-theme.css
 
