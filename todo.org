@@ -1,12 +1,10 @@
 * Files Remaining
 snippets/respond.liquid
 snippets/site-nav.liquid
-snippets/page-header.liquid
 snippets/google-fonts.liquid
 snippets/breadcrumb.liquid
 snippets/home-content.liquid
 snippets/social-sharing.liquid
-snippets/html-head.liquid
 snippets/product-grid-item.liquid
 snippets/comment.liquid
 snippets/featured-product.liquid
@@ -102,6 +100,7 @@ templates/product.liquid
 ** In the navigation, display the search bar on mouseover
 ** Diff the new snippets/social-meta-tags.liquid with the existing one
 ** Include a cart icon next to the cart data in the header
+*** Use assets/icons.json if possible
 ** Test all customer functionality (find-grep "*.liquid" customer)
 ** Activate snippets/social-links.liquid icons
 ** Add a minimal contact form to the footer in addition to a contact page
