@@ -39,7 +39,6 @@ locales/pt-BR.json
 assets/gift-card.scss.liquid
 assets/slick.eot
 assets/icons.json
-assets/magnific-popup.min.js
 assets/slick.ttf
 assets/app.js
 assets/slick.css
@@ -51,12 +50,9 @@ assets/icons.ttf
 assets/slider.js.liquid
 assets/timber.scss.liquid
 assets/slick.svg
-assets/slick.min.js
 assets/slick.woff
 assets/respond-proxy.html
-assets/fastclick.min.js
 assets/password-page-background.jpg
-assets/jquery.zoom.min.js
 assets/timber.js.liquid
 assets/respond.min.js
 assets/social-buttons.js.liquid
