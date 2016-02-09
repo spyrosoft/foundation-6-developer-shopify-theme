@@ -1,5 +1,4 @@
 * Files Remaining
-templates/collection.liquid
 templates/product.liquid
 templates/cart.liquid
 templates/page.liquid
@@ -24,7 +23,6 @@ snippets/site-nav.liquid
 snippets/google-fonts.liquid
 snippets/home-content.liquid
 snippets/social-sharing.liquid
-snippets/product-grid-item.liquid
 snippets/comment.liquid
 snippets/featured-product.liquid
 snippets/footer-js.liquid
@@ -41,7 +39,6 @@ snippets/featured-products.liquid
 snippets/blog-sidebar.liquid
 snippets/svg-definitions.liquid
 snippets/social-links.liquid
-snippets/collection-sorting.liquid
 
 assets/gift-card.scss.liquid
 assets/slick.eot
@@ -96,6 +93,7 @@ locales/pt-BR.json
 ** Style the product-showcase on-sale badges
 ** Limit the width of the footer content - at least the newsletter sign up form
 ** Systematically verify that all of the template and snippet begin and end comments are correct
+** Check on the empty store styling and make it nice
 
 * Feature Requests
 ** Systematically add i18n throughout the theme
