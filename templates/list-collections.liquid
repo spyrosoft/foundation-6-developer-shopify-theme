@@ -6,7 +6,6 @@
 <div class="row collections-showcase">
 	{% for collection in collections %}
 		{% unless collection.handle == 'frontpage' %}
-			{% assign collection_item_width = 'medium-down--one-half large--one-third' %}
 			{% assign featured = collection.handle %}
 			{% include 'collection-showcase-item' %}
 		{% endunless %}

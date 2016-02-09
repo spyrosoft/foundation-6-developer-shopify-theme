@@ -1,16 +1,16 @@
 * Files Remaining
-templates/cart.liquid
-templates/blog.liquid
-templates/404.liquid
 templates/collection.liquid
-templates/page.contact.liquid
-templates/page.no-heading.liquid
-templates/article.liquid
-templates/password.liquid
-templates/gift_card.liquid
-templates/page.liquid
-templates/search.liquid
 templates/product.liquid
+templates/cart.liquid
+templates/page.liquid
+templates/blog.liquid
+templates/article.liquid
+templates/page.contact.liquid
+templates/search.liquid
+templates/password.liquid
+templates/404.liquid
+templates/page.no-heading.liquid
+templates/gift_card.liquid
 templates/customers/order.liquid
 templates/customers/register.liquid
 templates/customers/account.liquid
@@ -22,7 +22,6 @@ templates/customers/login.liquid
 snippets/respond.liquid
 snippets/site-nav.liquid
 snippets/google-fonts.liquid
-snippets/breadcrumb.liquid
 snippets/home-content.liquid
 snippets/social-sharing.liquid
 snippets/product-grid-item.liquid
@@ -34,7 +33,6 @@ snippets/pagination-custom.liquid
 snippets/search-result-grid.liquid
 snippets/tags-article.liquid
 snippets/newsletter-form.liquid
-snippets/collection-grid-item.liquid
 snippets/slider.liquid
 snippets/search-result.liquid
 snippets/social-meta-tags.liquid
@@ -98,6 +96,7 @@ locales/pt-BR.json
 ** Systematically delete all unused files
 ** Style the product-showcase on-sale badges
 ** Limit the width of the footer content - at least the newsletter sign up form
+** Systematically verify that all of the template and snippet begin and end comments are correct
 
 * Feature Requests
 ** Systematically add i18n throughout the theme
