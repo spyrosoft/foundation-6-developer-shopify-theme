@@ -37,7 +37,6 @@ snippets/slider.liquid
 snippets/search-result.liquid
 snippets/social-meta-tags.liquid
 snippets/search-bar.liquid
-snippets/collection-tags.liquid
 snippets/featured-products.liquid
 snippets/blog-sidebar.liquid
 snippets/svg-definitions.liquid

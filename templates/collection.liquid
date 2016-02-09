@@ -9,10 +9,10 @@
 	{% include 'breadcrumb' %}
 </div>
 
-<header class="section-header section-header--large">
-	<h1 class="section-header__title{% if settings.collections_tags_enable or settings.collections_sort_enable %} section-header__title--left{% endif %}">{{ collection.title }}</h1>
+<header class="section-header">
+	<h1>{{ collection.title }}</h1>
 	{% if settings.collections_tags_enable or settings.collections_sort_enable %}
-	<div class="section-header__link--right">
+	<div class="float-right">
 		{% if settings.collections_tags_enable %}
 			{% include 'collection-tags' %}
 		{% endif %}
