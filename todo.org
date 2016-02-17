@@ -94,6 +94,9 @@ locales/pt-BR.json
 ** Limit the width of the footer content - at least the newsletter sign up form
 ** Systematically verify that all of the template and snippet begin and end comments are correct
 ** Check on the empty store styling and make it nice
+** Systematically replace all section-header class elements to <header>
+** Systematically review the code for paradigms e.g. individual-products to make sure they are all uniform
+** HTML Lint for missing close tags, etc.
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

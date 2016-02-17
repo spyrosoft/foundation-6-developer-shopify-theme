@@ -4,27 +4,27 @@
 	<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
 	<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
 
-	<div class="section-header section-header--breadcrumb">
+	<div class="breadcrumb">
 		{% include 'breadcrumb' %}
 	</div>
 
-	<div class="product-single">
-		<div class="grid product-single__hero">
-			<div class="grid__item large--one-half">
+	<div class="product-page">
+		<div class="row">
+			<div class="columns small-12 medium-12 large-6">
 
 				{% if settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
 
-					<div class="product-single__photos" id="ProductPhoto">
+					<div class="main-product-image">
 						{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-						<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
+						<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
 					</div>
 
 					{% if product.images.size > 1 %}
 
-						<ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+						<ul class="product-images row">
 							{% for image in product.images %}
-								<li class="grid__item large--one-third medium-down--one-third">
-									<a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
+								<li class="columns large-4 medium-4 small-4">
+									<a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}">
 										<img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
 									</a>
 								</li>
@@ -35,18 +35,18 @@
 
 				{% else %}
 
-					<div class="grid">
+					<div class="row">
 
-						<div class="grid__item four-fifths product-single__photos" id="ProductPhoto">
+						<div class="columns large-9 medium-9 small-9 main-product-image">
 							{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
 							<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
 						</div>
 
-						<div class="grid__item one-fifth">
+						<div class="columns large-3 medium-3 small-3">
 
-							<ul class="grid product-single__thumbnails" id="ProductThumbs">
+							<ul class="product-images">
 								{% for image in product.images %}
-									<li class="grid__item">
+									<li>
 										<a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
 											<img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
 										</a>
@@ -61,15 +61,15 @@
 				{% endif %}
 
 				{% if settings.product_image_zoom_type == 'lightbox' %}
-				<ul class="gallery" class="hidden">
+				<ul class="gallery hidden">
 					{% for image in product.images %}
-					<li data-image-id="{{ image.id }}" class="gallery__item" data-mfp-src="{{ image | img_url: '1024x1024' }}"></li>
+					<li data-image-id="{{ image.id }}" class="gallery-item" data-mfp-src="{{ image | img_url: '1024x1024' }}"></li>
 					{% endfor %}
 				</ul>
 				{% endif %}
 
 			</div>
-			<div class="grid__item large--one-half">
+			<div class="columns large-6 medium-12 small-12">
 				{% comment %}
 					<h3 itemprop="brand">{{ product.vendor }}</h3>
 				{% endcomment %}
@@ -94,7 +94,7 @@
 					</div>
 
 					<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-						<select name="id" id="productSelect" class="product-single__variants">
+						<select name="id" class="product-variants">
 							{% for variant in product.variants %}
 								{% if variant.available %}
 
@@ -108,13 +108,15 @@
 							{% endfor %}
 						</select>
 
-						<div class="product-single__quantity{% unless settings.product_quantity_enable %} is-hidden{% endunless %}">
-							<label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-							<input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+						<div class="product-quantity{% unless settings.product_quantity_enable %} display-none{% endunless %}">
+							<label>
+								{{ 'products.product.quantity' | t }}
+								<input type="number" name="quantity" value="1" min="1" class="quantity-selector">
+							</label>
 						</div>
 
-						<button type="submit" name="add" id="AddToCart" class="btn">
-							<span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+						<button type="submit" name="add" class="button">
+							<span class="add-to-cart-text">{{ 'products.product.add_to_cart' | t }}</span>
 						</button>
 					</form>
 
@@ -123,7 +125,7 @@
 					</div>
 
 					{% if settings.social_sharing_products %}
-						<hr class="hr--clear hr--small">
+						<hr>
 						{% include 'social-sharing' %}
 					{% endif %}
 				</div>
