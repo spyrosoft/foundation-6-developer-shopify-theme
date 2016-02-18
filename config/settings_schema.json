@@ -1520,25 +1520,6 @@
 			},
 			{
 				"type": "select",
-				"id": "product_image_zoom_type",
-				"label": "Image zoom type",
-				"options": [
-					{
-						"value": "lightbox",
-						"label": "Lightbox"
-					},
-					{
-						"value": "zoom-in",
-						"label": "Zoom-in"
-					},
-					{
-						"value": "",
-						"label": "No zoom"
-					}
-				]
-			},
-			{
-				"type": "select",
 				"id": "product_thumbnails_position",
 				"label": "Product thumbnail position",
 				"options": [

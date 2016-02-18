@@ -60,14 +60,6 @@
 
 				{% endif %}
 
-				{% if settings.product_image_zoom_type == 'lightbox' %}
-				<ul class="gallery hidden">
-					{% for image in product.images %}
-					<li data-image-id="{{ image.id }}" class="gallery-item" data-mfp-src="{{ image | img_url: '1024x1024' }}"></li>
-					{% endfor %}
-				</ul>
-				{% endif %}
-
 			</div>
 			<div class="columns large-6 medium-12 small-12">
 				{% comment %}

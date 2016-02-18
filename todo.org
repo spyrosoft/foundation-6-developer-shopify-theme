@@ -97,6 +97,8 @@ locales/pt-BR.json
 ** Systematically replace all section-header class elements to <header>
 ** Systematically review the code for paradigms e.g. individual-products to make sure they are all uniform
 ** HTML Lint for missing close tags, etc.
+** Systematically review the Shopify asset urls:
+	 https://docs.shopify.com/themes/liquid-documentation/filters/url-filters#shopify_asset_url
 
 * Feature Requests
 ** Systematically add i18n throughout the theme

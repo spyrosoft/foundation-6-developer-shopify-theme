@@ -17,11 +17,7 @@
 {{ 'fastclick.min.js' | asset_url | script_tag }}
 
 {% if template contains 'product' %}
-	{% if settings.product_image_zoom_type == 'zoom-in' %}
-		{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
-	{% elsif settings.product_image_zoom_type == 'lightbox'	%}
-		{{ 'magnific-popup.min.js' | asset_url | script_tag }}
-	{% endif %}
+	{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
 {% endif %}
 
 {% if template contains 'article' or template contains 'product' %}

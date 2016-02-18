@@ -65,7 +65,6 @@
 			"home_page_content": "frontpage",
 			"home_page_show_heading": true,
 			"product_quantity_enable": true,
-			"product_image_zoom_type": "lightbox",
 			"product_thumbnails_position": "below",
 			"product_related_enable": true,
 			"collections_show_sale_circle": true,
