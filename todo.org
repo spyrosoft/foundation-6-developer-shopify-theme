@@ -1,6 +1,4 @@
 * Files Remaining
-templates/page.contact.liquid
-templates/search.liquid
 templates/password.liquid
 templates/404.liquid
 templates/page.no-heading.liquid
