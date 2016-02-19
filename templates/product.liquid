@@ -16,7 +16,7 @@
 
 					<div class="main-product-image">
 						{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-						<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
+						<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" data-zoom="{{ featured_image | img_url: '1024x1024' }}" data-image-id="{{ featured_image.id }}">
 					</div>
 
 					{% if product.images.size > 1 %}
@@ -39,7 +39,7 @@
 
 						<div class="columns large-9 medium-9 small-9 main-product-image">
 							{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-							<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg"{% if settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ featured_image | img_url: '1024x1024' }}"{% endif %} data-image-id="{{ featured_image.id }}">
+							<img src="{{ featured_image | img_url: '1024x1024' }}" alt="{{ featured_image.alt | escape }}" data-zoom="{{ featured_image | img_url: 'grande' }}">
 						</div>
 
 						<div class="columns large-3 medium-3 small-3">
@@ -47,8 +47,8 @@
 							<ul class="product-images">
 								{% for image in product.images %}
 									<li>
-										<a data-image-id="{{ image.id }}" href="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail">
-											<img src="{{ image.src | img_url: 'grande' }}" alt="{{ image.alt | escape }}">
+										<a href="{{ image.src | img_url: '1024x1024' }}" class="single-product-thumbnail">
+											<img src="{{ image.src | img_url: '1024x1024' }}" alt="{{ image.alt | escape }}">
 										</a>
 									</li>
 								{% endfor %}
@@ -118,7 +118,8 @@
 
 					{% if settings.social_sharing_products %}
 						<hr>
-						{% include 'social-sharing' %}
+						<!-- TODO: Uncomment and make icons work -->
+						{% comment %} {% include 'social-sharing' %} {% endcomment %}
 					{% endif %}
 				</div>
 
@@ -132,37 +133,13 @@
 
 </div>
 
-{{ 'option_selection.js' | shopify_asset_url | script_tag }}
 <script>
-	var selectCallback = function(variant, selector) {
-		timber.productPage({
-			money_format: "{{ shop.money_format }}",
-			variant: variant,
-			selector: selector,
-			translations: {
-				add_to_cart : "{{ 'products.product.add_to_cart' | t }}",
-				sold_out : "{{ 'products.product.sold_out' | t }}",
-				unavailable : "{{ 'products.product.unavailable' | t }}"
-			}
-		});
-	};
-
-	jQuery(function($) {
-		new Shopify.OptionSelectors('productSelect', {
-			product: {{ product | json }},
-			onVariantSelected: selectCallback,
-			enableHistoryState: true
-		});
-
-		// Add label if only one product option and it isn't 'Title'. Could be 'Size'.
-		{% if product.options.size == 1 and product.options.first != 'Title' %}
-			$('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
-		{% endif %}
-
-		// Hide selectors if we only have 1 variant and its title contains 'Default'.
-		{% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
-			$('.selector-wrapper').hide();
-		{% endif %}
-	});
+	$( 'a.single-product-thumbnail' ).click(
+		function( click_event ) {
+			click_event.preventDefault();
+			$( '.main-product-image>img' ).attr( 'src', $( this ).find( 'img' ).first().attr( 'src' ) );
+		}
+	);
+	$( '.main-product-image' ).zoom();
 </script>
 <!-- end templates/product.liquid -->

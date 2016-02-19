@@ -21,6 +21,10 @@
 {{ 'app.scss.css' | asset_url | stylesheet_tag }}
 {{ 'jquery.min.js' | asset_url | script_tag }}
 
+{% if template contains 'product' %}
+	{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
+{% endif %}
+
 {% comment %}
 	If you store has customer accounts disabled, you can remove shopify_common.js:
 {% endcomment %}

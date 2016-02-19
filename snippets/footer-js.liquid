@@ -16,10 +16,6 @@
 
 {{ 'fastclick.min.js' | asset_url | script_tag }}
 
-{% if template contains 'product' %}
-	{{ 'jquery.zoom.min.js' | asset_url | script_tag }}
-{% endif %}
-
 {% if template contains 'article' or template contains 'product' %}
 	{% if settings.social_sharing_blog or settings.social_sharing_products %}
 		{{ 'social-buttons.js' | asset_url | script_tag }}
