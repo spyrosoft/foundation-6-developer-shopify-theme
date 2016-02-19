@@ -80,6 +80,10 @@ footer>div {
 	margin-bottom: $tiny-spacing;
 }
 
+.contact-form {
+	max-width: 30rem;
+}
+
 
 /* Colors */
 
@@ -94,6 +98,10 @@ $fg-color-secondary: #1585cf;
 .menu-icon:hover::after {
 	background-color: $fg-color-secondary;
 	box-shadow: 0 7px 0 $fg-color-secondary, 0 14px 0 $fg-color-secondary;
+}
+
+.errors {
+	color: #880000;
 }
 
 
@@ -132,6 +140,7 @@ $fg-color-secondary: #1585cf;
 	cursor: pointer;
 }
 
-.product-images li {
+.product-images li,
+.contact-form .errors li {
 	list-style-type: none;
 }
