@@ -1,6 +1,4 @@
 * Files Remaining
-templates/blog.liquid
-templates/article.liquid
 templates/page.contact.liquid
 templates/search.liquid
 templates/password.liquid
@@ -14,12 +12,15 @@ templates/customers/reset_password.liquid
 templates/customers/addresses.liquid
 templates/customers/activate_account.liquid
 templates/customers/login.liquid
+templates/blog.liquid
+templates/article.liquid
 
+snippets/social-sharing.liquid
+snippets/social-links.liquid
+snippets/social-meta-tags.liquid
 snippets/respond.liquid
-snippets/site-nav.liquid
 snippets/google-fonts.liquid
 snippets/home-content.liquid
-snippets/social-sharing.liquid
 snippets/comment.liquid
 snippets/featured-product.liquid
 snippets/footer-js.liquid
@@ -30,12 +31,10 @@ snippets/tags-article.liquid
 snippets/newsletter-form.liquid
 snippets/slider.liquid
 snippets/search-result.liquid
-snippets/social-meta-tags.liquid
 snippets/search-bar.liquid
 snippets/featured-products.liquid
-snippets/blog-sidebar.liquid
 snippets/svg-definitions.liquid
-snippets/social-links.liquid
+snippets/blog-sidebar.liquid
 
 assets/gift-card.scss.liquid
 assets/slick.eot
