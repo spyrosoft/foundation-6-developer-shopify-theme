@@ -1,6 +1,4 @@
 * Files Remaining
-templates/cart.liquid
-templates/page.liquid
 templates/blog.liquid
 templates/article.liquid
 templates/page.contact.liquid
