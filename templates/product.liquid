@@ -68,49 +68,60 @@
 				<h1 itemprop="name">{{ product.title }}</h1>
 
 				<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+
 					{% assign variant = product.selected_or_first_available_variant %}
 
 					<meta itemprop="priceCurrency" content="{{ shop.currency }}">
 					<link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
-					<div class="product-single__prices">
-						<span id="ProductPrice" class="product-single__price" itemprop="price">
-							{{ product.price | money }}
-						</span>
+					<div class="row">
+						<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+							
+							<div class="columns large-6 medium-6 small-12">
 
-						{% if product.compare_at_price > product.price %}
-							<s id="ComparePrice" class="product-single__sale-price">
-								{{ product.compare_at_price_max | money }}
-							</s>
-						{% endif %}
-					</div>
+									<div class="price" itemprop="price">
+										{{ product.price | money }}
 
-					<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-						<select name="id" class="product-variants">
-							{% for variant in product.variants %}
-								{% if variant.available %}
+										{% if product.compare_at_price > product.price %}
+											<span class="product-compare-price">
+												{{ product.compare_at_price_max | money }}
+											</span>
+										{% endif %}
+									</div>
+								
+								<select name="id" class="product-variants">
+									{% for variant in product.variants %}
+									{% if variant.available %}
 
 									<option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
 
-								{% else %}
+									{% else %}
 									<option disabled="disabled">
 										{{ variant.title }} - {{ 'products.product.sold_out' | t }}
 									</option>
-								{% endif %}
-							{% endfor %}
-						</select>
+									{% endif %}
+									{% endfor %}
+								</select>
+							</div>
 
-						<div class="product-quantity{% unless settings.product_quantity_enable %} display-none{% endunless %}">
-							<label>
-								{{ 'products.product.quantity' | t }}
-								<input type="number" name="quantity" value="1" min="1" class="quantity-selector">
-							</label>
-						</div>
-
-						<button type="submit" name="add" class="button">
-							<span class="add-to-cart-text">{{ 'products.product.add_to_cart' | t }}</span>
-						</button>
-					</form>
+							<div class="columns large-6 medium-6 small-12">
+								<div class="product-quantity{% unless settings.product_quantity_enable %} display-none{% endunless %}">
+									<label>
+										{{ 'products.product.quantity' | t }}
+										<input type="number" name="quantity" value="1" min="1" class="quantity-selector">
+									</label>
+								</div>
+							</div>
+							
+							<div class="columns">
+								<button type="submit" name="add" class="button">
+									<span class="add-to-cart-text">{{ 'products.product.add_to_cart' | t }}</span>
+								</button>
+							</div>
+							
+						</form>
+					</div>
 
 					<div class="product-description rte" itemprop="description">
 						{{ product.description }}
@@ -118,8 +129,7 @@
 
 					{% if settings.social_sharing_products %}
 						<hr>
-						<!-- TODO: Uncomment and make icons work -->
-						{% comment %} {% include 'social-sharing' %} {% endcomment %}
+						{% include 'social-sharing' %}
 					{% endif %}
 				</div>
 
