@@ -81,7 +81,7 @@
 							<div class="columns large-6 medium-6 small-12">
 
 									<div class="price" itemprop="price">
-										{{ product.price | money }}
+										{{ product.price | money_with_currency }}
 
 										{% if product.compare_at_price > product.price %}
 											<span class="product-compare-price">
@@ -151,5 +151,11 @@
 		}
 	);
 	$( '.main-product-image' ).zoom();
+	$( 'select.product-variants' ).change(
+		function () {
+			var product_variant_cost = $('.product-variants').first().find( 'option:selected' ).html().match( / - (.+)?$/ )[ 1 ];
+			$( '.product-page .price' ).html( product_variant_cost );
+		}
+	);
 </script>
 <!-- end templates/product.liquid -->
